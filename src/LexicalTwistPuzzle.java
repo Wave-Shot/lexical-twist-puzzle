@@ -9,10 +9,17 @@ public class LexicalTwistPuzzle {
             return;
         }
         String reversed = new StringBuilder(word1).reverse().toString();
-        if (reversed.equalsIgnoreCase(word2)) {
-            String lower = reversed.toLowerCase();
-            String transformed = lower.replaceAll("[aeiou]", "@");
-            System.out.println(transformed);
+        if (!reversed.equalsIgnoreCase(word2)) {
+            String combined = (word1 + word2).toUpperCase();
+            int vowels = 0;
+            int consonants = 0;
+            for (int i = 0; i < combined.length(); i++) {
+                char ch = combined.charAt(i);
+                if ("AEIOU".indexOf(ch) != -1) vowels++;
+                else if (Character.isLetter(ch)) consonants++;
+            }
+            System.out.println("Vowels: " + vowels);
+            System.out.println("Consonants: " + consonants);
         }
     }
 }
