@@ -8,5 +8,13 @@ public class LexicalTwistPuzzle {
         String word1 = sc.nextLine();
         System.out.print("Enter second word: ");
         String word2 = sc.nextLine();
+        if (word1.contains(" ")) {
+            System.out.println(word1 + " is an invalid word");
+            return;
+        }
+        if (word2.contains(" ")) {
+            System.out.println(word2 + " is an invalid word");
+            return;
+        }
     }
 }
